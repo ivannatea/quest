@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class=" doors" style="display: flex;">
+		<div class="col-4 door1">
+			<img src="door.png">
+		</div>
+		<div class="col-4 door2">
+			<img src="door2.png" style="width: 350px;">
+		</div>
+		<div class="col-4 door3">
+			<img src="tardis.png" style="width: 360px;">
+		</div>
+	</div>
+	<div class="hogwarts" style="height: 900px; background-image: url('bg.jpg'); display: none; background-size: cover;">
+		<h1 class="text-light pl-3">Найди мантию,палочку и метлу</h1>
+		<h1 class="score_text text-light pl-3 innerHTML">0</h1>
+		<button type="button" class="btn btn-success ml-3" style="position: absolute;">выйти из игры</button>
+		<img src="palochka.png" class="col-1 palochka" style="margin-left: 200px;position: absolute;">
+		<img src="metla.png" class="metla" style="margin-top: 400px; margin-right: 500px; width: 100px; position: absolute;">
+		<img src="mantiya.png" class="mantiya" style="width: 100px; margin-left: 400px; margin-top: 650px; position: absolute;">
+		<img src="ring.png" class="" style="width: 40px; margin-left: 600px; position: absolute;">
+		<img src="gun.png" class="" style="width: 100px; margin-left: 300px; margin-top: 400px; position: absolute;">
+	</div>
+	<div class="sh" style="background-image:url(sherlockholmes.png);height: 900px; background-size: cover; display: none;">
+		<h1 class="text-light pl-3" style="text-shadow: 1px 1px 2px black">Найди лупу,кепку и скрипку</h1>
+		<h1 class="score_text2 text-light pl-3 innerHTML">0</h1>
+		<button type="button" class="btn bs btn-success ml-3" style="position: absolute;">выйти из игры</button>
+		<img src="magnifier.png" class="magnifier" style="margin-left: 420px; margin-top: 70px; width: 100px; position: absolute;">
+		<img src="pipe.png" class="" style="margin-top: 600px; margin-left: 850px; width: 100px; position: absolute;">
+		<img src="hat.png" class="hat" style="margin-top: 450px; margin-left: 950px; width: 70px; position: absolute;">
+		<img src="violin.png" class="violin" style="margin-left: 650px; margin-top: 200px; width: 70px; position: absolute;">
+		<img src="revolver.png" style="width: 100px; margin-left: 650px; margin-top: 580px; position: absolute;">
+	</div>
+	<div class="tardis" style="background-image:url(bg3.jpg);height: 900px; background-size: cover; display: none;">
+		<h1 class="text-light pl-3">Найди звуковую отвертку,феску и очки</h1>
+		<h1 class="score_text3 text-light pl-3 innerHTML">0</h1>
+		<button type="button" class="btn trds btn-success ml-3" style="position: absolute;">выйти из игры</button>
+		<img src="sonic.png" class="sonic" style="margin-left: 620px; margin-top: 600px; width: 80px; position: absolute;">
+		<img src="glasses.png" class="glasses" style="margin-left: 900px; margin-top:480px; width: 50px; position: absolute;">
+		<img src="fez.png" class="fez" style="margin-left: 557px; margin-top: 325px; width: 60px; position: absolute;">
+		<img src="butterfly.png" style="width: 100px; margin-top: 650px; margin-left: 900px; position: absolute;">
+	</div>
+	<script type="text/javascript">
+		let score = 0;
+		let score2 = 0;
+		let score3 = 0;
+
+		document.querySelector(".door1").onclick = function(){
+			alert("Добро пожаловать в Хогвартс!");
+			document.querySelector(".hogwarts").style.display = "block";
+			document.querySelector(".doors").style.display = "none";
+		}
+		document.querySelector(".door2").onclick = function(){
+			alert("Добро пожаловать на Бейкер-стрит 221Б");
+			document.querySelector(".sh").style.display = "block";
+			document.querySelector(".doors").style.display = "none";
+		}
+		document.querySelector(".door3").onclick = function(){
+			alert("Добро пожаловать в ТАРДИС!");
+			document.querySelector(".tardis").style.display = "block";
+			document.querySelector(".doors").style.display = "none";
+		}
+		document.querySelector(".palochka").onclick = function(){
+			document.querySelector(".palochka").style.display = "none";
+			score = score+1;
+			document.querySelector(".score_text").innerHTML = score ;
+		}
+		document.querySelector(".metla").onclick = function(){
+			document.querySelector(".metla").style.display = "none";
+			score = score+1;
+			document.querySelector(".score_text").innerHTML = score ;
+		}
+		document.querySelector(".mantiya").onclick = function(){
+			document.querySelector(".mantiya").style.display = "none";
+			score = score+1;
+			document.querySelector(".score_text").innerHTML = score ;
+		}
+		document.querySelector(".btn").onclick = function(){
+			document.querySelector(".hogwarts").style.display = "none";
+			document.querySelector(".doors").style.display = "flex";
+		}
+		document.querySelector(".bs").onclick = function(){
+			document.querySelector(".sh").style.display = "none";
+			document.querySelector(".doors").style.display = "flex";
+		}
+		document.querySelector(".trds").onclick = function(){
+			document.querySelector(".tardis").style.display = "none";
+			document.querySelector(".doors").style.display = "flex";
+		}
+		document.querySelector(".hat").onclick = function(){
+			document.querySelector(".hat").style.display = "none";
+			score2 = score2+1;
+			document.querySelector(".score_text2").innerHTML = score2 ;
+		}
+		document.querySelector(".violin").onclick = function(){
+			document.querySelector(".violin").style.display = "none";
+			score2 = score2+1;
+			document.querySelector(".score_text2").innerHTML = score2 ;
+		}
+		document.querySelector(".magnifier").onclick = function(){
+			document.querySelector(".magnifier").style.display = "none";
+			score2 = score2+1;
+			document.querySelector(".score_text2").innerHTML = score2 ;
+		}
+		document.querySelector(".fez").onclick = function(){
+			document.querySelector(".fez").style.display = "none";
+			score3 = score3+1;
+			document.querySelector(".score_text3").innerHTML = score3 ;
+		}
+		document.querySelector(".sonic").onclick = function(){
+			document.querySelector(".sonic").style.display = "none";
+			score3 = score3+1;
+			document.querySelector(".score_text3").innerHTML = score3 ;
+		}
+		document.querySelector(".glasses").onclick = function(){
+			document.querySelector(".glasses").style.display = "none";
+			score3 = score3+1;
+			document.querySelector(".score_text3").innerHTML = score3 ;
+		}
+	</script>
+</body>
+</html>
